@@ -4,7 +4,7 @@ import { cx } from "../utils";
 export interface NavLink {
   label: string;
   href: string;
-  accent?: string;
+  accent?: string | undefined;
 }
 
 /** Elementor widget: "LC Nav Menu". */
@@ -14,8 +14,8 @@ export function NavMenu({
   onNavigate,
 }: {
   links: NavLink[];
-  orientation?: "horizontal" | "vertical";
-  onNavigate?: () => void;
+  orientation?: "horizontal" | "vertical" | undefined;
+  onNavigate?: () => void | undefined;
 }) {
   return (
     <nav className={cx("lc-nav", orientation === "vertical" && "lc-nav--vertical")} aria-label="Main">
@@ -46,7 +46,7 @@ export function FooterColumn({ title, links }: { title: string; links: NavLink[]
 }
 
 /** Elementor widget: "LC Marquee" — scrolling trust ticker. */
-export function Marquee({ items, speed = 32, reverse }: { items: string[]; speed?: number; reverse?: boolean }) {
+export function Marquee({ items, speed = 32, reverse }: { items: string[]; speed?: number | undefined; reverse?: boolean }) {
   const group = (hidden?: boolean) => (
     <div className="lc-marquee__group" aria-hidden={hidden}>
       {items.map((it, i) => (

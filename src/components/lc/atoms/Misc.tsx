@@ -23,7 +23,7 @@ export function StepNumber({ value, variant = "circle" }: { value: string; varia
 }
 
 /** Elementor widget: "LC Price" — amount + period. */
-export function Price({ amount, period, onDark }: { amount: string; period?: string; onDark?: boolean }) {
+export function Price({ amount, period, onDark }: { amount: string; period?: string | undefined; onDark?: boolean }) {
   return (
     <div className={cx("lc-price", onDark && "lc-price--on-dark")}>
       <span className="lc-price__amount">{amount}</span>

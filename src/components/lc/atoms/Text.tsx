@@ -4,9 +4,9 @@ import { cx } from "../utils";
 /** Elementor widget: "LC Text" — body / lead paragraph. */
 export interface TextProps {
   children: ReactNode;
-  size?: "body" | "lead" | "small";
-  onDark?: boolean;
-  className?: string;
+  size?: "body" | "lead" | "small" | undefined;
+  onDark?: boolean | undefined;
+  className?: string | undefined;
 }
 
 export function Text({ children, size = "body", onDark, className }: TextProps) {

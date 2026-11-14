@@ -4,8 +4,8 @@ import { cx } from "../utils";
 /** Elementor widget: "LC Eyebrow" — small uppercase kicker above headings. */
 export interface EyebrowProps {
   label: string;
-  tone?: "purple" | "mint" | "on-dark";
-  icon?: LcIconName;
+  tone?: "purple" | "mint" | "on-dark" | undefined;
+  icon?: LcIconName | undefined;
 }
 
 export function Eyebrow({ label, tone = "purple", icon }: EyebrowProps) {

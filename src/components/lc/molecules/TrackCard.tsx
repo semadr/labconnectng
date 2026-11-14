@@ -7,12 +7,12 @@ import { cx } from "../utils";
 export interface TrackCardProps {
   icon: LcIconName;
   title: string;
-  badge?: string;
+  badge?: string | undefined;
   description: string;
   linkLabel: string;
-  theme?: "purple" | "mint";
-  selected?: boolean;
-  onSelect?: () => void;
+  theme?: "purple" | "mint" | undefined;
+  selected?: boolean | undefined;
+  onSelect?: () => void | undefined;
 }
 
 export function TrackCard({

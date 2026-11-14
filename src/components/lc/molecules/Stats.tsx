@@ -29,7 +29,7 @@ export function StatGroup({ items }: { items: StatItem[] }) {
 export interface MetricItem {
   value: string;
   label: string;
-  highlight?: boolean;
+  highlight?: boolean | undefined;
 }
 
 /** Elementor widget: "LC Metric Tile" — e.g. "1 · Core message". */
@@ -40,7 +40,7 @@ export function MetricTile({
 }: {
   value: string;
   label: string;
-  variant?: "white" | "glass" | "mint";
+  variant?: "white" | "glass" | "mint" | undefined;
 }) {
   return (
     <div className={cx("lc-metric", variant !== "white" && `lc-metric--${variant}`)}>

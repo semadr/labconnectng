@@ -3,15 +3,15 @@ import { cx } from "../utils";
 
 /** Elementor widget: "LC Section Header" — badge + heading + description. */
 export interface SectionHeaderProps {
-  badge?: string;
-  badgeVariant?: PillVariant;
+  badge?: string | undefined;
+  badgeVariant?: PillVariant | undefined;
   title: string;
-  highlight?: string | string[];
-  highlightTone?: "purple" | "mint";
-  description?: string;
-  align?: "split" | "center" | "left";
-  level?: HeadingLevel;
-  className?: string;
+  highlight?: string | string[] | undefined;
+  highlightTone?: "purple" | "mint" | undefined;
+  description?: string | undefined;
+  align?: "split" | "center" | "left" | undefined;
+  level?: HeadingLevel | undefined;
+  className?: string | undefined;
 }
 
 export function SectionHeader({

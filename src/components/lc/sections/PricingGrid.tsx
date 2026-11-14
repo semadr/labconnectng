@@ -15,15 +15,15 @@ export function PricingGrid({
   ctaSelectedLabel,
 }: {
   title: string;
-  highlight?: string;
+  highlight?: string | undefined;
   note: string;
-  noteStyle?: "text" | "pill";
+  noteStyle?: "text" | "pill" | undefined;
   items: PricingCardProps[];
   theme: "clinic" | "rvaas";
   selectedId: string;
   onSelect: (id: string) => void;
-  ctaLabel?: string;
-  ctaSelectedLabel?: string;
+  ctaLabel?: string | undefined;
+  ctaSelectedLabel?: string | undefined;
 }) {
   return (
     <>

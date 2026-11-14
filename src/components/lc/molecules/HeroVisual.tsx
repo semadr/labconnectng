@@ -6,12 +6,12 @@ import { getIcon, type LcIconName } from "../icons";
 export interface CampaignCardProps {
   tag: string;
   eyebrow: string;
-  eyebrowIcon?: LcIconName;
+  eyebrowIcon?: LcIconName | undefined;
   title: string;
   body: string;
   ctaLabel: string;
   ctaSub: string;
-  href?: string;
+  href?: string | undefined;
 }
 
 export function CampaignCard({ tag, eyebrow, eyebrowIcon, title, body, ctaLabel, ctaSub, href = "#clinics" }: CampaignCardProps) {
@@ -43,7 +43,7 @@ export function CampaignCard({ tag, eyebrow, eyebrowIcon, title, body, ctaLabel,
 }
 
 /** Elementor widget: "LC Floating Note" — small overlapping info card. */
-export function FloatingNote({ icon, title, subtitle, className }: { icon?: LcIconName; title: string; subtitle: string; className?: string }) {
+export function FloatingNote({ icon, title, subtitle, className }: { icon?: LcIconName | undefined; title: string; subtitle: string; className?: string }) {
   const Icon = getIcon(icon);
   return (
     <div className={`lc-float-note ${className ?? ""}`}>

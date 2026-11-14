@@ -25,8 +25,8 @@ export function TrustRow({
   onDark,
 }: {
   items: TrustItem[];
-  align?: "start" | "center";
-  onDark?: boolean;
+  align?: "start" | "center" | undefined;
+  onDark?: boolean | undefined;
 }) {
   return (
     <ul className={cx("lc-trust-row", align === "center" && "lc-trust-row--center", onDark && "lc-trust-row--on-dark")}>

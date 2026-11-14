@@ -157,41 +157,41 @@ function WidgetLibrary() {
             </div>
           </Item>
           <Item widget="LC Stat Card · Metric Row" name="<StatCard> <MetricRow>">
-            <StatCard {...hero.stats[0]} />
+            <StatCard {...hero.stats[0]!} />
             <div className="lc-grow">
               <MetricRow items={rvaas.panel.metrics} />
             </div>
           </Item>
           <Item widget="LC Service Card · Track Card" name="<ServiceCard> <TrackCard>">
             <div className="lc-grow">
-              <ServiceCard {...clinicServices.items[0]} />
+              <ServiceCard {...clinicServices.items[0]!} />
             </div>
             <div className="lc-grow">
-              <TrackCard {...tracks.items[1]} selected />
+              <TrackCard {...tracks.items[1]!} selected />
             </div>
           </Item>
           <Item widget="LC Pricing Card" name="<PricingCard theme featured>">
             <div className="lc-grow">
-              <PricingCard {...clinicPackages.items[0]} />
+              <PricingCard {...clinicPackages.items[0]!} />
             </div>
             <div className="lc-grow">
-              <PricingCard {...clinicPackages.items[1]} selected />
+              <PricingCard {...clinicPackages.items[1]!} selected />
             </div>
           </Item>
           <Item widget="LC Process Step · Step Card" name="<ProcessStep> <StepCard>">
             <div className="lc-grow">
-              <ProcessStep {...rvaas.process.steps[0]} />
+              <ProcessStep {...rvaas.process.steps[0]!} />
             </div>
             <div className="lc-grow">
-              <StepCard {...howItWorks.steps[0]} />
+              <StepCard {...howItWorks.steps[0]!} />
             </div>
           </Item>
           <Item widget="LC Testimonial Card" name="<TestimonialCard tone>">
             <div className="lc-grow">
-              <TestimonialCard {...testimonials[0]} />
+              <TestimonialCard {...testimonials[0]!} />
             </div>
             <div className="lc-grow">
-              <TestimonialCard {...testimonials[1]} />
+              <TestimonialCard {...testimonials[1]!} />
             </div>
           </Item>
           <Item widget="LC Work Card" name="<WorkCard kind theme>">

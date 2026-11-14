@@ -4,9 +4,9 @@ import { cx } from "../utils";
 /** Elementor widget: "LC Check Item" — feature list row (use in repeaters). */
 export interface CheckItemProps {
   label: string;
-  variant?: "tick" | "circle";
-  tone?: "purple" | "mint";
-  onDark?: boolean;
+  variant?: "tick" | "circle" | undefined;
+  tone?: "purple" | "mint" | undefined;
+  onDark?: boolean | undefined;
 }
 
 export function CheckItem({ label, variant = "tick", tone = "purple", onDark }: CheckItemProps) {

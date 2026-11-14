@@ -5,7 +5,7 @@ import { cx } from "../utils";
  * Elementor widget: "LC Logo Mark" — the bridge icon drawn as SVG
  * (purple node + ring linked to the mint hub). Use as bullet, badge, divider.
  */
-export function LogoMark({ onDark, className }: { onDark?: boolean; className?: string }) {
+export function LogoMark({ onDark, className }: { onDark?: boolean | undefined; className?: string }) {
   return (
     <svg
       viewBox="0 0 64 64"
@@ -23,9 +23,9 @@ export function LogoMark({ onDark, className }: { onDark?: boolean; className?: 
 
 /** Elementor widget: "LC Logo" — full logo image linking home. */
 export interface LogoProps {
-  href?: string;
-  src?: string;
-  alt?: string;
+  href?: string | undefined;
+  src?: string | undefined;
+  alt?: string | undefined;
 }
 
 export function Logo({ href = "#top", src = logoAsset.url, alt = "LabConnect — Build the bridge" }: LogoProps) {

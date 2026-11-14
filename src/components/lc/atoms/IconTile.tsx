@@ -4,8 +4,8 @@ import { cx } from "../utils";
 /** Elementor widget: "LC Icon Tile" — icon in a rounded square. */
 export interface IconTileProps {
   icon: LcIconName;
-  tone?: "purple" | "mint" | "soft" | "white";
-  size?: "sm" | "md" | "lg";
+  tone?: "purple" | "mint" | "soft" | "white" | undefined;
+  size?: "sm" | "md" | "lg" | undefined;
 }
 
 export function IconTile({ icon, tone = "purple", size = "md" }: IconTileProps) {

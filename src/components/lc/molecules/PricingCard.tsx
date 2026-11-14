@@ -7,15 +7,15 @@ export interface PricingCardProps {
   badge: string;
   name: string;
   amount: string;
-  period?: string;
+  period?: string | undefined;
   description: string;
   features: string[];
-  ctaLabel?: string;
-  ctaSelectedLabel?: string;
-  theme?: "clinic" | "rvaas";
-  featured?: boolean;
-  selected?: boolean;
-  onSelect?: () => void;
+  ctaLabel?: string | undefined;
+  ctaSelectedLabel?: string | undefined;
+  theme?: "clinic" | "rvaas" | undefined;
+  featured?: boolean | undefined;
+  selected?: boolean | undefined;
+  onSelect?: () => void | undefined;
 }
 
 export function PricingCard({

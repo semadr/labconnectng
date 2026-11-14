@@ -12,13 +12,13 @@ export interface WorkCardProps {
   kind: "advert" | "abstract" | "carousel" | "poster";
   theme: WorkCardTheme;
   tag: string;
-  tagVariant?: PillVariant;
+  tagVariant?: PillVariant | undefined;
   title: string;
-  body?: string;
-  stripLabel?: string;
-  stripNote?: string;
-  metrics?: MetricItem[];
-  footerLabel?: string;
+  body?: string | undefined;
+  stripLabel?: string | undefined;
+  stripNote?: string | undefined;
+  metrics?: MetricItem[] | undefined;
+  footerLabel?: string | undefined;
 }
 
 export function WorkCard({ kind, theme, tag, tagVariant = "mint", title, body, stripLabel, stripNote, metrics, footerLabel }: WorkCardProps) {

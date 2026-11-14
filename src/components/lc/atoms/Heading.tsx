@@ -5,12 +5,12 @@ export type HeadingLevel = "hero" | "h2" | "h3" | "h4";
 /** Elementor widget: "LC Heading" — with a "Highlight words" control. */
 export interface HeadingProps {
   text: string;
-  highlight?: string | string[];
-  highlightTone?: "purple" | "mint";
-  level?: HeadingLevel;
-  as?: "h1" | "h2" | "h3" | "h4" | "p";
-  tone?: "ink" | "purple" | "on-dark";
-  className?: string;
+  highlight?: string | string[] | undefined;
+  highlightTone?: "purple" | "mint" | undefined;
+  level?: HeadingLevel | undefined;
+  as?: "h1" | "h2" | "h3" | "h4" | "p" | undefined;
+  tone?: "ink" | "purple" | "on-dark" | undefined;
+  className?: string | undefined;
 }
 
 const defaultTag: Record<HeadingLevel, HeadingProps["as"]> = {

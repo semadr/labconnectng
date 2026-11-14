@@ -6,11 +6,11 @@ export type PillVariant = "outline" | "dark" | "mint" | "mint-soft" | "glass" | 
 /** Elementor widget: "LC Badge / Pill". */
 export interface PillProps {
   label: string;
-  variant?: PillVariant;
-  dot?: "static" | "live";
-  icon?: LcIconName;
-  wide?: boolean;
-  className?: string;
+  variant?: PillVariant | undefined;
+  dot?: "static" | "live" | undefined;
+  icon?: LcIconName | undefined;
+  wide?: boolean | undefined;
+  className?: string | undefined;
 }
 
 export function Pill({ label, variant = "outline", dot, icon, wide, className }: PillProps) {

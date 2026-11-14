@@ -7,15 +7,15 @@ export type ButtonVariant = "primary" | "accent" | "outline" | "light" | "ghost"
 /** Elementor widget: "LC Button" — controls mirror these props. */
 export interface ButtonProps {
   label: string;
-  href?: string;
-  variant?: ButtonVariant;
-  size?: "sm" | "md" | "lg";
-  icon?: LcIconName;
-  iconPosition?: "before" | "after";
-  block?: boolean;
-  external?: boolean;
-  onClick?: MouseEventHandler<HTMLElement>;
-  className?: string;
+  href?: string | undefined;
+  variant?: ButtonVariant | undefined;
+  size?: "sm" | "md" | "lg" | undefined;
+  icon?: LcIconName | undefined;
+  iconPosition?: "before" | "after" | undefined;
+  block?: boolean | undefined;
+  external?: boolean | undefined;
+  onClick?: MouseEventHandler<HTMLElement> | undefined;
+  className?: string | undefined;
 }
 
 export function Button({

@@ -7,9 +7,9 @@ export interface TestimonialCardProps {
   name: string;
   role: string;
   initials: string;
-  tone?: "light" | "dark";
-  badge?: string;
-  rating?: number;
+  tone?: "light" | "dark" | undefined;
+  badge?: string | undefined;
+  rating?: number | undefined;
 }
 
 export function TestimonialCard({ quote, name, role, initials, tone = "light", badge, rating = 5 }: TestimonialCardProps) {
