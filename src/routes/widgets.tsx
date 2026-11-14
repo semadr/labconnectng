@@ -74,7 +74,9 @@ function WidgetLibrary() {
           description="Atoms are the smallest pieces. Molecules combine atoms. Sections on the home page only arrange molecules — so each piece here becomes its own Elementor widget."
           align="left"
         />
-        <Button label="Back to the page" href="/" variant="outline" size="sm" icon="arrow-right" />
+        <div style={{ marginBottom: "2.5rem" }}>
+          <Button label="Back to the page" href="/" variant="outline" size="sm" icon="arrow-right" />
+        </div>
 
         <section className="lc-lib__group">
           <Heading text="Atoms" level="h3" />
