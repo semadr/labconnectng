@@ -1,0 +1,100 @@
+/* ==========================================================================
+   LabConnect Design Tokens
+   Portable: this file works as-is inside the Elementor plugin
+   (enqueue it before atoms.css / molecules.css / sections.css).
+   ========================================================================== */
+:root {
+  /* Brand colours (from logo) */
+  --lc-purple: oklch(0.278 0.151 297.1);        /* #340067 */
+  --lc-purple-deep: oklch(0.269 0.132 293.9);   /* #2D0B5E */
+  --lc-purple-soft: oklch(0.962 0.02 295.2);    /* #F3F0FF */
+  --lc-purple-tint: oklch(0.38 0.13 297);       /* lifted purple for surfaces on dark */
+  --lc-mint: oklch(0.752 0.145 165.2);          /* #33CB98 */
+  --lc-mint-strong: oklch(0.7 0.15 165);
+  --lc-mint-dark: oklch(0.515 0.106 164.1);     /* readable mint text on white */
+  --lc-mint-soft: oklch(0.979 0.029 169.7);     /* #E6FFF5 */
+  --lc-mint-line: oklch(0.88 0.08 167);
+
+  /* Neutrals */
+  --lc-white: oklch(1 0 0);
+  --lc-lavender: oklch(0.979 0.011 292);        /* #F8F7FF section bg */
+  --lc-grid: oklch(0.945 0.023 296.7);          /* #EEEAFB hero net lines */
+  --lc-border: oklch(0.923 0.029 296.7);
+  --lc-ink: oklch(0.235 0.036 290.6);           /* #1E1B2E */
+  --lc-muted: oklch(0.523 0.044 294.7);         /* #6B6581 */
+  --lc-night: oklch(0.178 0.013 300.4);         /* lab campaign dark card */
+  --lc-on-dark: oklch(1 0 0);
+  --lc-on-dark-muted: oklch(0.86 0.03 295);
+
+  /* Typography */
+  --lc-font-display: "Fraunces", Georgia, serif;
+  --lc-font-body: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --lc-fs-hero: clamp(2.6rem, 5.6vw, 4.6rem);
+  --lc-fs-h2: clamp(2rem, 4vw, 3.4rem);
+  --lc-fs-h3: clamp(1.5rem, 2.4vw, 2rem);
+  --lc-fs-h4: 1.2rem;
+  --lc-fs-lead: clamp(1.05rem, 1.4vw, 1.2rem);
+  --lc-fs-body: 0.98rem;
+  --lc-fs-small: 0.86rem;
+  --lc-fs-micro: 0.72rem;
+
+  /* Shape */
+  --lc-radius-sm: 10px;
+  --lc-radius: 16px;
+  --lc-radius-lg: 24px;
+  --lc-radius-xl: 32px;
+  --lc-radius-pill: 999px;
+
+  /* Elevation */
+  --lc-shadow-sm: 0 1px 2px color-mix(in oklab, var(--lc-purple) 6%, transparent);
+  --lc-shadow: 0 12px 32px -14px color-mix(in oklab, var(--lc-purple) 22%, transparent);
+  --lc-shadow-lg: 0 30px 70px -30px color-mix(in oklab, var(--lc-purple) 45%, transparent);
+  --lc-shadow-mint: 0 18px 40px -18px color-mix(in oklab, var(--lc-mint) 60%, transparent);
+
+  /* Layout */
+  --lc-container: 1200px;
+  --lc-gutter: clamp(1.1rem, 4vw, 2rem);
+  --lc-section-y: clamp(4rem, 9vw, 7rem);
+
+  /* Patterns */
+  --lc-grid-pattern:
+    linear-gradient(var(--lc-grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--lc-grid) 1px, transparent 1px);
+  --lc-grid-size: 72px 72px;
+
+  --lc-ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ---------- Base (scoped to .lc-root so it never leaks into a WP theme) ---------- */
+.lc-root {
+  font-family: var(--lc-font-body);
+  color: var(--lc-ink);
+  background: var(--lc-white);
+  font-size: var(--lc-fs-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+/* Resets use :where() so they carry zero specificity and never beat a component class. */
+:where(.lc-root) *, :where(.lc-root) *::before, :where(.lc-root) *::after { box-sizing: border-box; }
+:where(.lc-root) img { max-width: 100%; display: block; }
+:where(.lc-root) a { color: inherit; text-decoration: none; }
+:where(.lc-root) :is(h1, h2, h3, h4, p, blockquote, figure) { margin: 0; }
+:where(.lc-root) ul { margin: 0; padding: 0; list-style: none; }
+:where(.lc-root) button { font-family: inherit; cursor: pointer; }
+:where(.lc-root) :focus-visible { outline: 3px solid var(--lc-mint); outline-offset: 3px; border-radius: 6px; }
+
+.lc-container { width: 100%; max-width: var(--lc-container); margin-inline: auto; padding-inline: var(--lc-gutter); }
+.lc-section { padding-block: var(--lc-section-y); position: relative; scroll-margin-top: 80px; }
+.lc-section--lavender { background: var(--lc-lavender); }
+.lc-section--mint { background: var(--lc-mint-soft); }
+.lc-section--grid { background-color: var(--lc-white); background-image: var(--lc-grid-pattern); background-size: var(--lc-grid-size); }
+.lc-stack > * + * { margin-top: var(--lc-stack-gap, 1rem); }
+
+@keyframes lc-rise { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+@keyframes lc-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes lc-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes lc-pulse { 0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--lc-mint) 55%, transparent); } 50% { box-shadow: 0 0 0 6px transparent; } }
+.lc-reveal { animation: lc-rise 0.8s var(--lc-ease) both; }
+@media (prefers-reduced-motion: reduce) {
+  .lc-root *, .lc-root *::before, .lc-root *::after { animation: none !important; transition: none !important; }
+}

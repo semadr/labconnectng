@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+- LabConnect UI lives in `src/components/lc/` as atoms → molecules → sections, styled only with plain `lc-` BEM classes from `src/styles/lc/*.css` (no Tailwind utilities in these components) — why: the markup and CSS must port 1:1 into the Elementor widget plugin.
+- Page copy and prices live in `src/components/lc/content.ts`; components take props with those defaults — why: props mirror Elementor widget controls and content can be swapped per market (NG / Global).
+- Every new building block gets a showcase entry on `/widgets` and a row in `src/components/lc/WIDGETS.md` — why: that page is the reference for building each Elementor widget.
