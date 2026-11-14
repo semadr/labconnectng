@@ -71,7 +71,7 @@
 /* ---------- Final CTA ---------- */
 .lc-final-cta { position: relative; overflow: hidden; background: var(--lc-purple); color: var(--lc-on-dark); border-radius: var(--lc-radius-xl); padding: clamp(2.5rem, 7vw, 5rem) clamp(1.25rem, 5vw, 4rem); text-align: center; display: grid; gap: 1.5rem; justify-items: center; }
 .lc-final-cta::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(color-mix(in oklab, var(--lc-white) 5%, transparent) 1px, transparent 1px), linear-gradient(90deg, color-mix(in oklab, var(--lc-white) 5%, transparent) 1px, transparent 1px); background-size: var(--lc-grid-size); mask-image: radial-gradient(ellipse at center, var(--lc-white), transparent 75%); pointer-events: none; }
-.lc-final-cta > * { position: relative; }
+.lc-final-cta > :not(.lc-dots) { position: relative; }
 .lc-final-cta .lc-text { max-width: 620px; }
 .lc-final-cta__mark { display: grid; place-items: center; width: 60px; height: 60px; border-radius: 18px; background: var(--lc-white); }
 .lc-final-cta__mark .lc-logomark { width: 34px; height: 34px; }
