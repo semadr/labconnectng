@@ -1,0 +1,126 @@
+/* ==========================================================================
+   ATOMS — smallest reusable pieces (each can be its own Elementor widget
+   or a control-driven fragment inside bigger widgets).
+   ========================================================================== */
+
+/* ---------- Button ---------- */
+.lc-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.5rem;
+  min-height: 48px; padding: 0.75rem 1.4rem; border-radius: var(--lc-radius-pill);
+  border: 2px solid transparent; font-weight: 700; font-size: 0.95rem; line-height: 1.2;
+  white-space: nowrap; transition: transform 0.25s var(--lc-ease), background 0.25s, color 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+.lc-btn:hover { transform: translateY(-2px); }
+.lc-btn__icon { width: 1.05em; height: 1.05em; transition: transform 0.25s var(--lc-ease); flex-shrink: 0; }
+.lc-btn:hover .lc-btn__icon--trail { transform: translateX(3px); }
+.lc-btn--sm { min-height: 40px; padding: 0.5rem 1.05rem; font-size: 0.86rem; }
+.lc-btn--lg { min-height: 56px; padding: 0.95rem 1.7rem; font-size: 1rem; }
+.lc-btn--block { width: 100%; }
+.lc-btn--primary { background: var(--lc-purple); color: var(--lc-on-dark); box-shadow: var(--lc-shadow); }
+.lc-btn--primary:hover { background: var(--lc-purple-deep); box-shadow: var(--lc-shadow-lg); }
+.lc-btn--accent { background: var(--lc-mint); color: var(--lc-purple); }
+.lc-btn--accent:hover { background: var(--lc-mint-strong); box-shadow: var(--lc-shadow-mint); }
+.lc-btn--outline { background: var(--lc-mint-soft); color: var(--lc-purple); border-color: var(--lc-purple); }
+.lc-btn--outline:hover { background: var(--lc-white); }
+.lc-btn--light { background: var(--lc-white); color: var(--lc-purple); }
+.lc-btn--light:hover { box-shadow: 0 14px 30px -14px color-mix(in oklab, var(--lc-white) 50%, transparent); }
+.lc-btn--ghost { background: transparent; color: var(--lc-purple); padding-inline: 0.25rem; min-height: auto; }
+.lc-btn--ghost:hover { transform: none; color: var(--lc-mint-dark); }
+
+/* ---------- Pill / Badge ---------- */
+.lc-pill {
+  display: inline-flex; align-items: center; gap: 0.45rem; padding: 0.38rem 0.8rem;
+  border-radius: var(--lc-radius-pill); font-size: var(--lc-fs-micro); font-weight: 800;
+  letter-spacing: 0.06em; text-transform: uppercase; line-height: 1.2; border: 1px solid transparent;
+}
+.lc-pill__dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; flex-shrink: 0; }
+.lc-pill__dot--live { background: var(--lc-mint); animation: lc-pulse 2s infinite; }
+.lc-pill__icon { width: 0.95rem; height: 0.95rem; }
+.lc-pill--outline { background: var(--lc-white); color: var(--lc-purple); border-color: var(--lc-border); }
+.lc-pill--dark { background: var(--lc-purple); color: var(--lc-on-dark); }
+.lc-pill--dark .lc-pill__dot { background: var(--lc-mint); }
+.lc-pill--mint { background: var(--lc-mint); color: var(--lc-purple); }
+.lc-pill--mint-soft { background: var(--lc-mint-soft); color: var(--lc-mint-dark); border-color: var(--lc-mint-line); }
+.lc-pill--glass { background: color-mix(in oklab, var(--lc-white) 14%, transparent); color: var(--lc-on-dark); }
+.lc-pill--chip { text-transform: none; letter-spacing: 0; font-weight: 700; font-size: 0.8rem; padding: 0.4rem 0.85rem; background: var(--lc-mint-soft); color: var(--lc-mint-dark); }
+.lc-pill--wide { letter-spacing: 0.16em; padding: 0.45rem 0.95rem; }
+
+/* ---------- Eyebrow ---------- */
+.lc-eyebrow { display: inline-flex; align-items: center; gap: 0.5rem; font-size: var(--lc-fs-micro); font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--lc-purple); }
+.lc-eyebrow--mint { color: var(--lc-mint-dark); }
+.lc-eyebrow--on-dark { color: var(--lc-mint); }
+.lc-eyebrow__icon { width: 1rem; height: 1rem; }
+
+/* ---------- Heading ---------- */
+.lc-heading { font-family: var(--lc-font-display); font-weight: 900; line-height: 1.02; letter-spacing: -0.025em; color: var(--lc-ink); font-variation-settings: "opsz" 144; text-wrap: balance; }
+.lc-heading--hero { font-size: var(--lc-fs-hero); }
+.lc-heading--h2 { font-size: var(--lc-fs-h2); }
+.lc-heading--h3 { font-size: var(--lc-fs-h3); font-weight: 700; line-height: 1.15; }
+.lc-heading--h4 { font-family: var(--lc-font-body); font-size: var(--lc-fs-h4); font-weight: 800; letter-spacing: -0.01em; line-height: 1.3; }
+.lc-heading--on-dark { color: var(--lc-on-dark); }
+.lc-heading--purple { color: var(--lc-purple); }
+.lc-hl { color: var(--lc-purple); }
+.lc-hl--mint { color: var(--lc-mint-dark); }
+.lc-heading--on-dark .lc-hl { color: var(--lc-mint); }
+
+/* ---------- Text ---------- */
+.lc-text { color: var(--lc-muted); font-size: var(--lc-fs-body); line-height: 1.7; }
+.lc-text--lead { font-size: var(--lc-fs-lead); line-height: 1.65; }
+.lc-text--small { font-size: var(--lc-fs-small); }
+.lc-text--on-dark { color: var(--lc-on-dark-muted); }
+.lc-quote { font-family: var(--lc-font-display); font-weight: 700; font-size: clamp(1.15rem, 1.8vw, 1.4rem); line-height: 1.4; color: var(--lc-mint-dark); }
+
+/* ---------- Icon tile ---------- */
+.lc-icon-tile { display: inline-grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0; background: var(--lc-purple); color: var(--lc-on-dark); }
+.lc-icon-tile svg { width: 22px; height: 22px; }
+.lc-icon-tile--mint { background: var(--lc-mint); color: var(--lc-purple); }
+.lc-icon-tile--soft { background: var(--lc-purple-soft); color: var(--lc-purple); }
+.lc-icon-tile--white { background: var(--lc-white); color: var(--lc-purple); box-shadow: var(--lc-shadow-sm); }
+.lc-icon-tile--sm { width: 36px; height: 36px; border-radius: 10px; }
+.lc-icon-tile--sm svg { width: 18px; height: 18px; }
+.lc-icon-tile--lg { width: 56px; height: 56px; border-radius: 16px; }
+
+/* ---------- Logo mark (bridge icon) ---------- */
+.lc-logomark { display: inline-block; width: 28px; height: 28px; flex-shrink: 0; }
+.lc-logomark__node { fill: var(--lc-purple); }
+.lc-logomark__ring { fill: none; stroke: var(--lc-purple); }
+.lc-logomark__link { stroke: var(--lc-purple); }
+.lc-logomark__hub { fill: var(--lc-mint); }
+.lc-logomark--on-dark .lc-logomark__node { fill: var(--lc-white); }
+.lc-logomark--on-dark .lc-logomark__ring, .lc-logomark--on-dark .lc-logomark__link { stroke: var(--lc-white); }
+.lc-logo { display: inline-flex; align-items: center; }
+.lc-logo img { height: 34px; width: auto; }
+
+/* ---------- Check item ---------- */
+.lc-check { display: flex; align-items: flex-start; gap: 0.65rem; font-size: 0.93rem; font-weight: 600; color: var(--lc-ink); line-height: 1.45; }
+.lc-check__icon { width: 18px; height: 18px; margin-top: 2px; color: var(--lc-purple); flex-shrink: 0; }
+.lc-check--mint .lc-check__icon { color: var(--lc-mint-dark); }
+.lc-check--circle .lc-check__icon { width: 20px; height: 20px; margin-top: 0; padding: 4px; border-radius: 50%; background: var(--lc-mint); color: var(--lc-purple); }
+.lc-check--on-dark { color: var(--lc-on-dark); }
+.lc-check--on-dark .lc-check__icon { color: var(--lc-mint); }
+
+/* ---------- Stars ---------- */
+.lc-stars { display: inline-flex; gap: 2px; color: var(--lc-mint); }
+.lc-stars svg { width: 16px; height: 16px; fill: currentColor; }
+
+/* ---------- Avatar ---------- */
+.lc-avatar { display: inline-grid; place-items: center; width: 46px; height: 46px; border-radius: 50%; font-weight: 800; font-size: 0.9rem; flex-shrink: 0; background: var(--lc-purple); color: var(--lc-on-dark); }
+.lc-avatar--mint { background: var(--lc-mint); color: var(--lc-purple); }
+
+/* ---------- Step number ---------- */
+.lc-step-num { display: inline-grid; place-items: center; font-family: var(--lc-font-display); font-weight: 900; color: var(--lc-purple); line-height: 1; }
+.lc-step-num--circle { width: 48px; height: 48px; border-radius: 50%; background: var(--lc-purple); color: var(--lc-on-dark); font-size: 1rem; }
+.lc-step-num--big { font-size: 3rem; letter-spacing: -0.03em; }
+
+/* ---------- Price ---------- */
+.lc-price { display: flex; align-items: baseline; flex-wrap: wrap; gap: 0.4rem; }
+.lc-price__amount { font-family: var(--lc-font-display); font-weight: 900; font-size: clamp(2.2rem, 3.4vw, 2.8rem); line-height: 1; letter-spacing: -0.03em; color: var(--lc-ink); }
+.lc-price__period { font-size: 0.9rem; font-weight: 600; color: var(--lc-muted); }
+.lc-price--on-dark .lc-price__amount { color: var(--lc-on-dark); }
+.lc-price--on-dark .lc-price__period { color: var(--lc-on-dark-muted); }
+
+/* ---------- Decorative dot grid ---------- */
+.lc-dots { position: absolute; width: 90px; height: 90px; pointer-events: none; background-image: radial-gradient(var(--lc-dots-color, var(--lc-mint)) 1.4px, transparent 1.6px); background-size: 16px 16px; opacity: 0.5; }
+
+/* ---------- Divider ---------- */
+.lc-divider { height: 1px; background: var(--lc-border); border: 0; margin: 0; }
