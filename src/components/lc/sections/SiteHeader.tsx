@@ -5,7 +5,7 @@ import { nav as defaults } from "../content";
 import { NavMenu } from "../molecules";
 
 /** Section widget: "LC Header" = Logo + Nav Menu + Button (+ mobile drawer). */
-export function SiteHeader({ data = defaults }: { data?: typeof defaults }) {
+export function SiteHeader({ data = defaults }: { data?: typeof defaults | undefined }) {
   const [open, setOpen] = useState(false);
   return (
     <header className="lc-header">

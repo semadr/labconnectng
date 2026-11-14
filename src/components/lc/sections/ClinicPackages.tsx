@@ -3,7 +3,7 @@ import { useSelection } from "../selection";
 import { PricingGrid } from "./PricingGrid";
 
 /** Section widget: "LC Clinic Packages". */
-export function ClinicPackages({ data = defaults }: { data?: typeof defaults }) {
+export function ClinicPackages({ data = defaults }: { data?: typeof defaults | undefined }) {
   const { clinicPackage, setClinicPackage, setTrack } = useSelection();
   return (
     <section id="packages" className="lc-section" style={{ paddingTop: 0 }}>

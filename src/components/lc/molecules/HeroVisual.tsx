@@ -43,7 +43,7 @@ export function CampaignCard({ tag, eyebrow, eyebrowIcon, title, body, ctaLabel,
 }
 
 /** Elementor widget: "LC Floating Note" — small overlapping info card. */
-export function FloatingNote({ icon, title, subtitle, className }: { icon?: LcIconName | undefined; title: string; subtitle: string; className?: string }) {
+export function FloatingNote({ icon, title, subtitle, className }: { icon?: LcIconName | undefined; title: string; subtitle: string; className?: string | undefined }) {
   const Icon = getIcon(icon);
   return (
     <div className={`lc-float-note ${className ?? ""}`}>

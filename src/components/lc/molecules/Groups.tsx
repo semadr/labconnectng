@@ -3,7 +3,7 @@ import { getIcon, type LcIconName } from "../icons";
 import { cx } from "../utils";
 
 /** Elementor widget: "LC Button Group" — repeater of buttons. */
-export function ButtonGroup({ buttons, align = "start" }: { buttons: ButtonProps[]; align?: "start" | "center" }) {
+export function ButtonGroup({ buttons, align = "start" }: { buttons: ButtonProps[]; align?: "start" | "center" | undefined }) {
   return (
     <div className={cx("lc-btn-group", align === "center" && "lc-btn-group--center")}>
       {buttons.map((b) => (

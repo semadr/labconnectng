@@ -2,7 +2,7 @@ import { Star } from "lucide-react";
 import { cx } from "../utils";
 
 /** Elementor widget: "LC Stars" — rating row. */
-export function Stars({ count = 5 }: { count?: number }) {
+export function Stars({ count = 5 }: { count?: number | undefined }) {
   return (
     <span className="lc-stars" role="img" aria-label={`${count} out of 5 stars`}>
       {Array.from({ length: count }).map((_, i) => (
@@ -13,17 +13,17 @@ export function Stars({ count = 5 }: { count?: number }) {
 }
 
 /** Elementor widget: "LC Avatar" — initials circle. */
-export function Avatar({ initials, tone = "purple" }: { initials: string; tone?: "purple" | "mint" }) {
+export function Avatar({ initials, tone = "purple" }: { initials: string; tone?: "purple" | "mint" | undefined }) {
   return <span className={cx("lc-avatar", tone === "mint" && "lc-avatar--mint")}>{initials}</span>;
 }
 
 /** Elementor widget: "LC Step Number" — "01" as circle or big serif numeral. */
-export function StepNumber({ value, variant = "circle" }: { value: string; variant?: "circle" | "big" }) {
+export function StepNumber({ value, variant = "circle" }: { value: string; variant?: "circle" | "big" | undefined }) {
   return <span className={cx("lc-step-num", `lc-step-num--${variant}`)}>{value}</span>;
 }
 
 /** Elementor widget: "LC Price" — amount + period. */
-export function Price({ amount, period, onDark }: { amount: string; period?: string | undefined; onDark?: boolean }) {
+export function Price({ amount, period, onDark }: { amount: string; period?: string | undefined; onDark?: boolean | undefined }) {
   return (
     <div className={cx("lc-price", onDark && "lc-price--on-dark")}>
       <span className="lc-price__amount">{amount}</span>
@@ -33,6 +33,6 @@ export function Price({ amount, period, onDark }: { amount: string; period?: str
 }
 
 /** Decorative dot grid (absolute-positioned). */
-export function DotGrid({ className }: { className?: string }) {
+export function DotGrid({ className }: { className?: string | undefined }) {
   return <span className={cx("lc-dots", className)} aria-hidden />;
 }

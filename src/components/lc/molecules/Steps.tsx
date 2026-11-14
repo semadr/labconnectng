@@ -8,7 +8,7 @@ export interface StepItem {
 }
 
 /** Elementor widget: "LC Process Step" — numbered timeline item. */
-export function ProcessStep({ number, title, description, last }: StepItem & { last?: boolean }) {
+export function ProcessStep({ number, title, description, last }: StepItem & { last?: boolean | undefined }) {
   return (
     <div className={cx("lc-process-step", last && "lc-process-step--last")}>
       <div className="lc-process-step__head">

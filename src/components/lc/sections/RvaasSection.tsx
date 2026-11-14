@@ -5,7 +5,7 @@ import { useSelection } from "../selection";
 import { PricingGrid } from "./PricingGrid";
 
 /** Section widget: "LC R-VaaS Intro" — copy column + dark metric panel. */
-export function RvaasIntro({ data = defaults }: { data?: typeof defaults }) {
+export function RvaasIntro({ data = defaults }: { data?: typeof defaults | undefined }) {
   return (
     <div className="lc-rvaas__top">
       <div className="lc-rvaas__copy">
@@ -36,7 +36,7 @@ export function RvaasIntro({ data = defaults }: { data?: typeof defaults }) {
 }
 
 /** Section widget: "LC R-VaaS Process" — 4-step timeline. */
-export function RvaasProcess({ data = defaults.process }: { data?: typeof defaults.process }) {
+export function RvaasProcess({ data = defaults.process }: { data?: typeof defaults.process | undefined }) {
   return (
     <div className="lc-rvaas__process">
       <div className="lc-rvaas__process-head">
@@ -53,7 +53,7 @@ export function RvaasProcess({ data = defaults.process }: { data?: typeof defaul
 }
 
 /** Section widget: "LC R-VaaS Packages". */
-export function RvaasPackages({ data = pkgDefaults }: { data?: typeof pkgDefaults }) {
+export function RvaasPackages({ data = pkgDefaults }: { data?: typeof pkgDefaults | undefined }) {
   const { rvaasPackage, setRvaasPackage, setTrack } = useSelection();
   return (
     <PricingGrid

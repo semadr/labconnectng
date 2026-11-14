@@ -2,7 +2,7 @@ import { portfolio as defaults } from "../content";
 import { SectionHeader, WorkCard } from "../molecules";
 
 /** Section widget: "LC Portfolio Gallery" — Section Header + Work Card repeater. */
-export function Portfolio({ data = defaults }: { data?: typeof defaults }) {
+export function Portfolio({ data = defaults }: { data?: typeof defaults | undefined }) {
   return (
     <section id="work" className="lc-section">
       <div className="lc-container">

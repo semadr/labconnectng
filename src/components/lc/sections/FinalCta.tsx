@@ -4,7 +4,7 @@ import { ButtonGroup, TrustRow } from "../molecules";
 import { useSelection } from "../selection";
 
 /** Section widget: "LC Final CTA" — two WhatsApp buttons that carry the chosen package. */
-export function FinalCta({ data = defaults }: { data?: typeof defaults }) {
+export function FinalCta({ data = defaults }: { data?: typeof defaults | undefined }) {
   const { clinicPackage, rvaasPackage } = useSelection();
   const clinic = clinicPackages.items.find((p) => p.id === clinicPackage);
   const research = rvaasPackages.items.find((p) => p.id === rvaasPackage);

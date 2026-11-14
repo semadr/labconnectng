@@ -4,7 +4,7 @@ import { TrackCard } from "../molecules";
 import { useSelection } from "../selection";
 
 /** Section widget: "LC Service Toggle" — two selectable Track Cards. */
-export function TrackSelector({ data = defaults }: { data?: typeof defaults }) {
+export function TrackSelector({ data = defaults }: { data?: typeof defaults | undefined }) {
   const { track, setTrack } = useSelection();
   return (
     <div className="lc-tracks">

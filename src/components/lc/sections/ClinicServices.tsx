@@ -2,7 +2,7 @@ import { clinicServices as defaults } from "../content";
 import { SectionHeader, ServiceCard } from "../molecules";
 
 /** Section widget: "LC Services Grid" — Section Header + Service Card repeater. */
-export function ClinicServices({ data = defaults }: { data?: typeof defaults }) {
+export function ClinicServices({ data = defaults }: { data?: typeof defaults | undefined }) {
   return (
     <section id="clinics" className="lc-section">
       <div className="lc-container">

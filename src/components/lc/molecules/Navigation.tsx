@@ -46,7 +46,7 @@ export function FooterColumn({ title, links }: { title: string; links: NavLink[]
 }
 
 /** Elementor widget: "LC Marquee" — scrolling trust ticker. */
-export function Marquee({ items, speed = 32, reverse }: { items: string[]; speed?: number | undefined; reverse?: boolean }) {
+export function Marquee({ items, speed = 32, reverse }: { items: string[]; speed?: number | undefined; reverse?: boolean | undefined }) {
   const group = (hidden?: boolean) => (
     <div className="lc-marquee__group" aria-hidden={hidden}>
       {items.map((it, i) => (

@@ -3,7 +3,7 @@ import { footer as defaults, site } from "../content";
 import { FooterColumn } from "../molecules";
 
 /** Section widget: "LC Footer" — Logo + tagline + Footer Columns + CTA. */
-export function SiteFooter({ data = defaults }: { data?: typeof defaults }) {
+export function SiteFooter({ data = defaults }: { data?: typeof defaults | undefined }) {
   return (
     <footer className="lc-footer">
       <div className="lc-container">

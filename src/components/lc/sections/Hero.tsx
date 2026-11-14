@@ -4,7 +4,7 @@ import { ButtonGroup, CampaignCard, FloatingNote, StatGroup } from "../molecules
 import { TrackSelector } from "./TrackSelector";
 
 /** Section widget: "LC Hero (Clinic)" — badges, heading, text, buttons, stats, campaign card. */
-export function Hero({ data = defaults }: { data?: typeof defaults }) {
+export function Hero({ data = defaults }: { data?: typeof defaults | undefined }) {
   return (
     <section id="top" className="lc-section--grid lc-hero">
       <div className="lc-container">

@@ -51,7 +51,7 @@ export function MetricTile({
 }
 
 /** Elementor widget: "LC Metric Row" — 3 metric tiles, one highlighted. */
-export function MetricRow({ items, base = "white" }: { items: MetricItem[]; base?: "white" | "glass" }) {
+export function MetricRow({ items, base = "white" }: { items: MetricItem[]; base?: "white" | "glass" | undefined }) {
   return (
     <div className="lc-metric-row">
       {items.map((m) => (

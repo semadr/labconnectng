@@ -5,7 +5,7 @@ import { cx } from "../utils";
  * Elementor widget: "LC Logo Mark" — the bridge icon drawn as SVG
  * (purple node + ring linked to the mint hub). Use as bullet, badge, divider.
  */
-export function LogoMark({ onDark, className }: { onDark?: boolean | undefined; className?: string }) {
+export function LogoMark({ onDark, className }: { onDark?: boolean | undefined; className?: string | undefined }) {
   return (
     <svg
       viewBox="0 0 64 64"
