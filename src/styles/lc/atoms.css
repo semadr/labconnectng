@@ -99,6 +99,9 @@
 .lc-check--on-dark { color: var(--lc-on-dark); }
 .lc-check--on-dark .lc-check__icon { color: var(--lc-mint); }
 
+/* Check list (repeater of check items) */
+.lc-check-list { display: grid; gap: 0.7rem; }
+
 /* ---------- Stars ---------- */
 .lc-stars { display: inline-flex; gap: 2px; color: var(--lc-mint); }
 .lc-stars svg { width: 16px; height: 16px; fill: currentColor; }

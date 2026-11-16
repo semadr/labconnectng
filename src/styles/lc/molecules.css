@@ -94,7 +94,7 @@
 
 /* ---------- Work / portfolio card ---------- */
 .lc-work-card { display: flex; flex-direction: column; gap: 0.9rem; min-height: 280px; overflow: hidden; padding: 1.5rem; }
-.lc-work-card__title { font-family: var(--lc-font-display); font-weight: 900; font-size: clamp(1.35rem, 2vw, 1.6rem); line-height: 1.15; letter-spacing: -0.015em; margin-top: 0.4rem; }
+.lc-work-card__title { color: inherit; font-family: var(--lc-font-display); font-weight: 900; font-size: clamp(1.35rem, 2vw, 1.6rem); line-height: 1.15; letter-spacing: -0.015em; margin-top: 0.4rem; }
 .lc-work-card__body { font-size: var(--lc-fs-small); line-height: 1.6; color: var(--lc-muted); }
 .lc-work-card__strip { margin: auto -1.5rem -1.5rem; padding: 1rem 1.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1rem; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.04em; text-transform: uppercase; background: var(--lc-white); color: var(--lc-ink); border-top: 1px solid var(--lc-border); }
 .lc-work-card__strip-note { text-transform: none; letter-spacing: 0; color: var(--lc-purple); font-weight: 700; }
@@ -118,7 +118,7 @@
 .lc-campaign__top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; position: relative; z-index: 1; }
 .lc-campaign__mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--lc-white); }
 .lc-campaign__mark .lc-logomark { width: 24px; height: 24px; }
-.lc-campaign__title { font-family: var(--lc-font-display); font-weight: 900; font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1.08; letter-spacing: -0.02em; }
+.lc-campaign__title { color: inherit; font-family: var(--lc-font-display); font-weight: 900; font-size: clamp(1.6rem, 2.6vw, 2.1rem); line-height: 1.08; letter-spacing: -0.02em; }
 .lc-campaign__cta { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-top: 0.75rem; padding: 0.85rem 0.85rem 0.85rem 1.1rem; border-radius: var(--lc-radius); background: var(--lc-white); color: var(--lc-ink); }
 .lc-campaign__cta-label { font-size: 0.75rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
 .lc-campaign__cta-sub { font-size: var(--lc-fs-small); color: var(--lc-muted); }
