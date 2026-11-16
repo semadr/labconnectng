@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Elementor / WordPress compatibility layer (hand-written).
+   Loaded after labconnect.css. Neutralises theme + Elementor Kit defaults
+   so every LC widget looks the same as the React reference site.
+   ========================================================================== */
+.lc-w { background: transparent; }
+.lc-w [hidden] { display: none !important; }
+
+/* Theme resets (themes style bare tags with 0,0,1 specificity) */
+.lc-w :is(h1, h2, h3, h4, h5, h6, p, blockquote, figure) { margin: 0; padding: 0; }
+.lc-w ul, .lc-w li { list-style: none; margin: 0; padding: 0; }
+.lc-w a { text-decoration: none; box-shadow: none; }
+.lc-w button { font-family: inherit; text-transform: none; letter-spacing: inherit; }
+.lc-w img { border: 0; border-radius: 0; box-shadow: none; }
+.lc-w blockquote { border: 0; font-style: normal; quotes: none; }
+.lc-w blockquote::before, .lc-w blockquote::after { content: none; }
+
+/* Kit link colours on hover must not repaint LC components */
+.lc-w a.lc-btn--primary:hover { color: var(--lc-on-dark); }
+.lc-w a.lc-btn--accent:hover, .lc-w a.lc-btn--outline:hover, .lc-w a.lc-btn--light:hover { color: var(--lc-purple); }
+.lc-w a.lc-campaign__cta:hover { color: var(--lc-ink); }
+.lc-w a.lc-track-card:hover, .lc-w a.lc-logo:hover { color: inherit; }
+.lc-w .lc-header__toggle:hover, .lc-w .lc-header__toggle:focus { background: var(--lc-white); color: var(--lc-purple); border-color: var(--lc-border); }
+
+/* Custom icons from Elementor's icon library */
+.lc-w .lc-icon-custom { display: inline-flex; align-items: center; justify-content: center; line-height: 1; flex-shrink: 0; }
+.lc-w .lc-icon-custom > i { font-size: inherit; line-height: 1; }
+.lc-w .lc-icon-custom svg { width: 1em; height: 1em; fill: currentColor; }
+.lc-w .lc-btn__icon.lc-icon-custom, .lc-w .lc-eyebrow__icon.lc-icon-custom, .lc-w .lc-pill__icon.lc-icon-custom { font-size: 1em; }
+.lc-w .lc-icon-tile .lc-icon-custom { font-size: 22px; }
+.lc-w .lc-icon-tile--sm .lc-icon-custom { font-size: 18px; }
+.lc-w .lc-trust-row__item .lc-icon-custom { font-size: 16px; color: var(--lc-mint-dark); }
+
+/* Selection states driven by lc-widgets.js */
+.lc-w .lc-track-card { font: inherit; }
+.lc-w .lc-track-card .lc-track-card__state--on { display: none; }
+.lc-w .lc-track-card.is-selected .lc-track-card__state--on { display: inline-flex; }
+.lc-w .lc-track-card.is-selected .lc-track-card__state--off { display: none; }
+.lc-w .lc-pricing-card .lc-sel-on { display: none; }
+.lc-w .lc-pricing-card.is-selected .lc-sel-on { display: inline; }
+.lc-w .lc-pricing-card.is-selected .lc-sel-off { display: none; }
+.lc-w .lc-pricing-card:not(.is-selected) .lc-pricing-card__sel-icon { display: none; }
+
+/* Header toggle icons + drawer */
+.lc-w .lc-header .lc-header__icon-close { display: none; }
+.lc-w .lc-header.is-open .lc-header__icon-close { display: block; }
+.lc-w .lc-header.is-open .lc-header__icon-open { display: none; }
+.lc-w .lc-header--static { position: relative; }
+
+/* Floating note can be static when used on its own */
+.lc-w .lc-float-note--animated { animation: lc-float 6s ease-in-out infinite; }
+
+/* Section widgets: optional inner container off */
+.lc-w .lc-section--flush > .lc-container { max-width: none; padding-inline: 0; }
+
+/* Elementor editor: keep dot grids visible inside their positioned parents */
+.lc-w .lc-dots-wrap { position: relative; display: block; min-height: 90px; }
+.lc-w .lc-dots-wrap .lc-dots { top: 0; left: 0; }
