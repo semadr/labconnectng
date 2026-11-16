@@ -12,7 +12,7 @@ import type { MetricItem } from "./molecules/Stats";
 export const site = {
   brand: "LabConnect NG",
   /** Business WhatsApp number in international format, digits only (e.g. 2348012345678). Empty = WhatsApp lets the visitor pick a chat. */
-  whatsappNumber: "",
+  whatsappNumber: "2349025997196",
   copyright: "© 2026 LabConnect NG. All rights reserved.",
   footerTagline: "Two services. One clear standard.",
 };
