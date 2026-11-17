@@ -4,6 +4,7 @@
  * register every widget, validate its controls and render it with default settings.
  *   php elementor-plugin/dev/harness.php > /tmp/lcw.json
  */
+namespace {
 error_reporting( E_ALL );
 ini_set( 'display_errors', 'stderr' );
 set_error_handler( function ( $no, $str, $file, $line ) { fwrite( STDERR, "PHP[$no] $str @ $file:$line\n" ); $GLOBALS['lcw_errors'][] = "$str @ " . basename( $file ) . ":$line"; return true; } );
