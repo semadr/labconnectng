@@ -123,7 +123,7 @@
 .lc-price--on-dark .lc-price__period { color: var(--lc-on-dark-muted); }
 
 /* ---------- Decorative dot grid ---------- */
-.lc-dots { position: absolute; width: 90px; height: 90px; pointer-events: none; background-image: radial-gradient(var(--lc-dots-color, var(--lc-mint)) 1.4px, transparent 1.6px); background-size: 16px 16px; opacity: 0.5; }
+.lc-dots { position: absolute; width: 90px; height: 90px; pointer-events: none; background-image: radial-gradient(var(--lc-dots-color, var(--lc-mint)) var(--lc-dots-size, 1.4px), transparent calc(var(--lc-dots-size, 1.4px) + 0.2px)); background-size: var(--lc-dots-gap, 16px) var(--lc-dots-gap, 16px); opacity: 0.5; }
 
 /* ---------- Divider ---------- */
 .lc-divider { height: 1px; background: var(--lc-border); border: 0; margin: 0; }
