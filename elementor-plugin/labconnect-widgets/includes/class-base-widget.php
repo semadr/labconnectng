@@ -564,4 +564,41 @@ abstract class Base_Widget extends \Elementor\Widget_Base {
 		$this->lc_heading_style( $p . '_title', 'Header · Title', $root . ' .lc-heading' );
 		$this->lc_text_style( $p . '_desc', 'Header · Description', $root . ' .lc-text' );
 	}
+
+	/** Text inside a card: typography, colour (Normal / Hover-of-card), margin, optional alignment. */
+	protected function lc_card_text_style( $id, $label, $selector, $hover_selector = null, array $x = [] ) {
+		$x += [ 'condition' => [], 'align' => false, 'margin' => true, 'bg' => false ];
+		$this->style_section( $id, $label, $x['condition'] );
+		if ( $x['align'] ) {
+			$this->lc_align( $id . '_align', $selector, 'text' );
+		}
+		$this->lc_style_controls( $id, $selector, [ 'typography' => true, 'margin' => $x['margin'], 'color' => true, 'bg' => $x['bg'], 'hover' => (bool) $hover_selector, 'hover_selector' => $hover_selector ] );
+		$this->end_controls_section();
+	}
+
+	/** Responsive "columns" control for a CSS grid. */
+	protected function lc_columns( $id, $selector, $default = '', $max = 6, $label = 'Columns' ) {
+		$opts = [ '' => 'Default' ];
+		for ( $i = 1; $i <= $max; $i++ ) {
+			$opts[ (string) $i ] = (string) $i;
+		}
+		$this->add_responsive_control( $id, [
+			'label'     => $label,
+			'type'      => CM::SELECT,
+			'options'   => $opts,
+			'default'   => $default,
+			'selectors' => [ $this->sel( $selector ) => 'grid-template-columns: repeat({{VALUE}}, minmax(0, 1fr));' ],
+		] );
+	}
+
+	/** Repeater-item colour controls (per item, uses {{CURRENT_ITEM}}). */
+	protected function c_item_colors( Repeater $r, $label = 'Custom colours' ) {
+		$r->add_control( 'item_colors_hd', [ 'label' => $label, 'type' => CM::HEADING, 'separator' => 'before' ] );
+		$cur = '{{WRAPPER}} .lc-w {{CURRENT_ITEM}}';
+		$r->add_control( 'item_color', [ 'label' => 'Text', 'type' => CM::COLOR, 'selectors' => [ $cur => 'color: {{VALUE}};' ] ] );
+		$r->add_control( 'item_bg', [ 'label' => 'Background', 'type' => CM::COLOR, 'selectors' => [ $cur => 'background-color: {{VALUE}};' ] ] );
+		$r->add_control( 'item_border', [ 'label' => 'Border', 'type' => CM::COLOR, 'selectors' => [ $cur => 'border-color: {{VALUE}};' ] ] );
+		$r->add_control( 'item_hcolor', [ 'label' => 'Hover text', 'type' => CM::COLOR, 'selectors' => [ $cur . ':hover' => 'color: {{VALUE}};' ] ] );
+		$r->add_control( 'item_hbg', [ 'label' => 'Hover background', 'type' => CM::COLOR, 'selectors' => [ $cur . ':hover' => 'background-color: {{VALUE}};' ] ] );
+	}
 }
