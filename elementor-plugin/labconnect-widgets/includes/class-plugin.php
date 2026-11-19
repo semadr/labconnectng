@@ -171,6 +171,7 @@ final class Plugin {
 		require_once LCW_PATH . 'includes/class-icons.php';
 		require_once LCW_PATH . 'includes/class-render.php';
 		require_once LCW_PATH . 'includes/class-base-widget.php';
+		require_once LCW_PATH . 'includes/trait-track-parts.php';
 	}
 
 	public function register_widgets( $widgets_manager ) {

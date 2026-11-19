@@ -124,7 +124,7 @@ namespace {
 		}
 		// condition keys must exist
 		foreach ( $wd->r->controls ?? [] as $id => $c ) {
-			foreach ( ( $c['condition'] ?? [] ) as $k => $v ) { $k = rtrim( $k, '!' ); if ( ! isset( $wd->r->controls[ $k ] ) ) { $errors[] = "control $id condition on missing $k"; } }
+			foreach ( ( $c['condition'] ?? [] ) as $k => $v ) { $k = preg_replace( '/\[.*$/', '', rtrim( $k, '!' ) ); if ( ! isset( $wd->r->controls[ $k ] ) ) { $errors[] = "control $id condition on missing $k"; } }
 		}
 		$out[] = [
 			'file' => $w[0], 'name' => $wd->get_name(), 'title' => $wd->get_title(), 'icon' => $wd->get_icon(), 'cats' => $wd->get_categories(),

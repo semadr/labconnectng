@@ -601,4 +601,13 @@ abstract class Base_Widget extends \Elementor\Widget_Base {
 		$r->add_control( 'item_hcolor', [ 'label' => 'Hover text', 'type' => CM::COLOR, 'selectors' => [ $cur . ':hover' => 'color: {{VALUE}};' ] ] );
 		$r->add_control( 'item_hbg', [ 'label' => 'Hover background', 'type' => CM::COLOR, 'selectors' => [ $cur . ':hover' => 'background-color: {{VALUE}};' ] ] );
 	}
+
+	/** "a | b | c" lines -> arrays of trimmed parts. */
+	protected function pairs( $v ) {
+		$out = [];
+		foreach ( $this->lines( $v ) as $line ) {
+			$out[] = array_map( 'trim', explode( '|', $line ) );
+		}
+		return $out;
+	}
 }
